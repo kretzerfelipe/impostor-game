@@ -7,11 +7,7 @@ export function PageWrapper({ children }: { children: React.ReactNode }) {
   const { theme } = useThemeStore();
   return (
     <SafeAreaView className={cn(theme === "dark" && "dark")}>
-      <View
-        className={cn(
-          "flex-container p-4 bg-background overflow-hidden h-full",
-        )}
-      >
+      <View className={cn("flex-container p-4 overflow-auto h-screen-safe")}>
         {children}
       </View>
     </SafeAreaView>

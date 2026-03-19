@@ -116,6 +116,7 @@
   flex-wrap: wrap;
   width: 100%;
   box-sizing: border-box;
+  flex-direction: row;
 }
 
 @utility fill {
