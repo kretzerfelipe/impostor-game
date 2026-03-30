@@ -2,10 +2,10 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Text, TextProps } from "react-native";
 import { cn, getFontWeightClass } from "../../lib/utils";
 
-const textVariants = cva("text-foreground font-[Poppins-Regular]", {
+const textVariants = cva("text-foreground", {
   variants: {
     variant: {
-      h1: "text-4xl",
+      h1: "text-7xl",
       h2: "text-3xl",
       h3: "text-2xl",
       h4: "text-xl",
@@ -33,7 +33,8 @@ export function DefaultText({
 
   return (
     <Text
-      className={cn(textVariants({ variant }), fontFamilyClass, className)}
+      className={cn(textVariants({ variant }), className, "leading-5")}
+      style={{ fontFamily: fontFamilyClass }}
       {...props}
     />
   );

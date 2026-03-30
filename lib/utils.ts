@@ -14,7 +14,8 @@ export function getFontWeightClass({
 }) {
   const fontWeight = weight || 400;
   const italicSuffix = italic ? "Italic" : "";
-  return `font-[Poppins-${getFontWeightName(fontWeight)}${italicSuffix}]`;
+
+  return `Poppins-${getFontWeightName(fontWeight)}${italicSuffix}`;
 }
 
 function getFontWeightName(weight: number) {

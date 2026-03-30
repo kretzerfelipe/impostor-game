@@ -1,13 +1,17 @@
-import { View } from "react-native";
+import { View, ViewProps } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useThemeStore } from "../hooks/store/theme-store";
 import { cn } from "../lib/utils";
 
-export function PageWrapper({ children }: { children: React.ReactNode }) {
-  const { theme } = useThemeStore();
+export function PageWrapper({ className, children, ...props }: ViewProps) {
   return (
-    <SafeAreaView className={cn(theme === "dark" && "dark")}>
-      <View className={cn("flex-container p-4 overflow-auto h-screen-safe")}>
+    <SafeAreaView>
+      <View
+        className={cn(
+          "flex-container dark bg-background p-8 overflow-auto h-screen-safe gap-8",
+          className
+        )}
+        {...props}
+      >
         {children}
       </View>
     </SafeAreaView>
